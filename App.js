@@ -1,20 +1,37 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react';
+import { StatusBar } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+
+import AppLoading from 'expo-app-loading';
+import { useFonts } from 'expo-font';
+import { Montserrat_Regular, Montserrat_Bold } from '@expo-google-fonts/montserrat';
+
+import { Background } from './src/components/Background';
+import { Routes } from './src/routes';
+
+// console.disableYellowBox=true;
 
 export default function App() {
+  // const [fontsLoaded, error] = useFonts({
+  //   Montserrat_Regular,
+  //   Montserrat_Bold,
+  // });
+
+  // if(!fontsLoaded){
+  //   return <AppLoading/>
+  // }else{
+  //   error = "Problemas de Fonte!"
+  //   console.log(error)
+  // }
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <StatusBar
+        barStyle="light-content"
+        backgroundColor="transparent"
+        translucent
+      />
+      <Routes/>
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
