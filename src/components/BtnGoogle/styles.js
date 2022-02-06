@@ -5,16 +5,20 @@ export const styles = StyleSheet.create({
   submitButton: {
     width: '60%',
     height: 45,
+    alignItems: 'center',
     backgroundColor: theme.colors.primary,
-    flexDirection: 'row'
+    flexDirection: 'row',
+    borderRadius: 25,
   },
 
   imageButton: {
-    alignSelf: 'flex-start',
+    marginRight: 35,
+    marginLeft: -3,
   },
 
   textButton: {
     fontSize: 20,
-    alignSelf: 'center',
+    fontFamily: theme.fonts.title,
+    color: theme.colors.light,
   }
 });

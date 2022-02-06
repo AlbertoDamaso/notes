@@ -17,7 +17,9 @@ export function SignIn() {
           <Logo/>
 
           <BtnGoogle
-            
+            source={google}
+            title={"ENTRAR"}
+            activeOpacity={0.7}
           />
         </View>
     </Background>

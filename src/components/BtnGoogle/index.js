@@ -18,8 +18,8 @@ export function BtnGoogle({ title, imagem, ...rest}) {
         {...rest}
     >
         <Image
-            source={imagem}
             style={styles.imageButton}
+            {...rest}
         />
 
         <Text style={styles.textButton}>

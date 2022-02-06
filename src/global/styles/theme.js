@@ -12,7 +12,7 @@ export const theme = {
     },
 
     fonts: {
-        title: 'Montserrat_Regular',
-        text: 'Montserrat_Bold',
+        text: 'Montserrat_400Regular',
+        title: 'Montserrat_700Bold',
     }
 }
