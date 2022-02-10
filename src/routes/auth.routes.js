@@ -13,7 +13,7 @@ export function AuthRoutes() {
         name='SignIn'
         component={SignIn}
         options={{headerShown: false}}
-      />
+      />      
     </AuthStack.Navigator> 
   );
 }
