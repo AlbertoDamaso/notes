@@ -4,10 +4,11 @@ import {
   Text
 } from 'react-native';
 
-import { Background } from '../../components/Background';
-import { Logo } from '../../components/Logo';
-import { BtnGoogle } from '../../components/BtnGoogle';
 import google from '../../assets/GoogleImg.png'
+
+import { Background } from '../../components/Background';
+import { BtnGoogle } from '../../components/BtnGoogle';
+import { Logo } from '../../components/Logo';
 import { styles } from './styles';
 
 export function SignIn() {

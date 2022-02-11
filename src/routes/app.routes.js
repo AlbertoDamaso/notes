@@ -1,7 +1,12 @@
 import React from 'react';
-import { createDrawerNavigator } from '@react-navigation/drawer';
 
-import Home from '../screens/Home';
+import { createDrawerNavigator } from '@react-navigation/drawer';
+import { Icon } from '@expo/vector-icons';
+
+import { Home } from '../screens/Home';
+import { Profile } from '../screens/Profile';
+import { CustomDrawer } from '../components/CustomDrawer';
+import { theme } from '../global/styles/theme';
 
 const AppDrawer = createDrawerNavigator();
 
@@ -9,26 +14,46 @@ export function AppRoutes() {
   return (
     <AppDrawer.Navigator
       drawerContent={ (props) => <CustomDrawer {...props}/> }
+      screenOptions={{
+        headerShown: false,
+        drawerActiveTintColor: theme.colors.light,
+        drawerActiveBackgroundColor: theme.colors.secundary,
+        drawerInactiveBackgroundColor: theme.colors.light,
+        drawerInactiveTintColor: theme.colors.dark,
 
-      drawerStyle={{
-        backgroundColor: '#fff',
-      }}
-
-      drawerContentOptions={{
-        labelStyle:{
-          frontWeight: 'bold',
+        drawerStyle:{
+          width: '70%',
         },
-        activeTintColor: '#000',
-        activeBackgroundColor: '#F58966',
-        inactiveBackgroundColor: '#fff',
-        inactiveTintColor: '#DDD',
-        itemStyle: {
-          marginVertical: 5,
+
+        drawerItemStyle:{
+          width: '85%',
+          alignSelf: 'center',
+          borderRadius: 8,
+        },
+
+        drawerLabelStyle:{
+          fontSize: 18,
+          fontFamily: theme.fonts.title
         }
       }}
     >
-      <AppDrawer.Screen name="Home" component={Home}/>
+      <AppDrawer.Screen 
+        name="Tarefas" 
+        component={Home}
+        // options={{
+        //   drawerIcon: ({focused, size}) => (
+        //     <Icon
+        //     />
+        //   ),
+        // }}
+      />
 
+      <AppDrawer.Screen 
+        name="Perfil" 
+        component={Profile}
+      />  
+
+      
     </AppDrawer.Navigator>
   );
 }

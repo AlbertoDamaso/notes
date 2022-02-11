@@ -1,15 +1,21 @@
 import React from 'react';
 
 import {
-  View
+  View, 
+  Text
 } from 'react-native';
+import { Background } from '../../components/Background';
 
 import { styles } from './styles';
 
 export function Home() {
   return (
-    <View>
-
-    </View>
+    <Background>
+      <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+        <Text>
+          Olá, tarefa
+        </Text>
+      </View>
+    </Background>
   );
 }
