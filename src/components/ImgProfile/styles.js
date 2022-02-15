@@ -2,10 +2,11 @@ import { StyleSheet } from 'react-native';
 import { theme } from '../../global/styles/theme';
 
 export const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: theme.colors.lightMais1,
-  }
+  imageProfile: {
+    width: 81,
+    height: 81,
+    borderRadius: 45,
+    borderWidth:1,
+    borderColor: theme.colors.primary,
+  },
 });

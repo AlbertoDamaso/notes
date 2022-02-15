@@ -9,8 +9,8 @@ import {
 import { DrawerContentScrollView, DrawerItemList, DrawerItem } from '@react-navigation/drawer';
 
 // import { AuthContext } from '../../contexts/auth';
+import { ImgProfile } from '../ImgProfile';
 import { styles } from './styles';
-// ALTERAR TODOS OS STYLOS PARA STYLES
 
 export function CustomDrawer(props) {
     // const { user, signOut } = useContext(AuthContext);
@@ -18,11 +18,7 @@ export function CustomDrawer(props) {
   return (
     <DrawerContentScrollView {...props}>
         <View style={styles.container}>
-            <Image
-              source={require('../../assets/photoperfil.png')}
-              style={styles.imageProfile}
-              resizeMode="cover"
-            />
+            <ImgProfile/>
 
             <Text style={styles.title}>
                Alberto

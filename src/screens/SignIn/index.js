@@ -14,15 +14,13 @@ import { styles } from './styles';
 export function SignIn() {
   return (
     <Background>
-        <View style={styles.body}>
-          <Logo/>
+        <Logo/>
 
-          <BtnGoogle
-            source={google}
-            title={"ENTRAR"}
-            activeOpacity={0.7}
-          />
-        </View>
+        <BtnGoogle
+          source={google}
+          title={"ENTRAR"}
+          activeOpacity={0.7}
+        />
     </Background>
   );
 }

@@ -8,13 +8,6 @@ export const styles = StyleSheet.create({
     marginTop: 25,
     marginHorizontal: 20,
   },
-  imageProfile: {
-    width: 81,
-    height: 81,
-    borderRadius: 45,
-    borderWidth:1,
-    borderColor: theme.colors.primary
-  },
   title: {
     color: theme.colors.dark,
     fontFamily: theme.fonts.title,
