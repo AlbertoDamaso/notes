@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { createDrawerNavigator } from '@react-navigation/drawer';
-import { Icon } from '@expo/vector-icons';
+import { Ionicons, Feather, AntDesign } from '@expo/vector-icons';
 
 import { Home } from '../screens/Home';
 import { Profile } from '../screens/Profile';
@@ -33,24 +33,37 @@ export function AppRoutes() {
 
         drawerLabelStyle:{
           fontSize: 18,
-          fontFamily: theme.fonts.title
+          fontFamily: theme.fonts.title,
+          marginLeft: -25,
         }
       }}
     >
       <AppDrawer.Screen 
         name="Tarefas" 
         component={Home}
-        // options={{
-        //   drawerIcon: ({focused, size}) => (
-        //     <Icon
-        //     />
-        //   ),
-        // }}
+        options={{
+          drawerIcon: ({color, size}) => (
+            <Ionicons
+              name="clipboard"
+              color={color}
+              size={size}
+            />
+          ),
+        }}
       />
 
       <AppDrawer.Screen 
         name="Perfil" 
         component={Profile}
+        options={{
+          drawerIcon: ({color, size}) => (
+            <Feather
+              name="user"
+              color={color}
+              size={size}
+            />
+          ),
+        }}
       />  
 
       

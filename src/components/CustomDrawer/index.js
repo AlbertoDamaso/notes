@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { AntDesign } from '@expo/vector-icons';
 import {
   View,
   Text,
@@ -39,7 +40,14 @@ export function CustomDrawer(props) {
             {...props}
             label="Sair"
             style={{marginHorizontal: 20}}
-            labelStyle={{fontSize: 18, fontWeight: 'bold', color:"#ff7777"}}
+            labelStyle={{fontSize: 18, fontWeight: 'bold', color:"#222", marginLeft: -25}}
+            icon={() =>
+              <AntDesign
+                name="logout"
+                size={24}
+                color="#222"
+              />
+            }
             // onPress={ () => signOut() }
         />
     </DrawerContentScrollView>
