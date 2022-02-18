@@ -9,15 +9,24 @@ import { Feather } from '@expo/vector-icons';
 
 import { Background } from '../../components/Background';
 import { ImgProfile } from '../../components/ImgProfile';
-import { ListTarefas } from '../../components/Item';
+import { Item } from '../../components/Item';
 import { styles } from './styles';
+
+
+
 
 function handleDelete(){
 
 }
 
 export function Home() {
-  const [tarefas, setTarefas] = useState([]);
+  const [tarefas, setTarefas] = useState([
+    {key: '1', assunto: "Aprenda Fluxo UI", tempo: 2},
+    {key: '2', assunto: "Se increver no valdo sujei...", tempo: 3},
+    {key: '3', assunto: "Treinar inteface no figma", tempo: 6},
+  ]);
+
+  
 
   return (
     <Background>
