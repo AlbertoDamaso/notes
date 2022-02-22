@@ -15,7 +15,7 @@ export const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   icon: {
-    marginLeft: 236,
+    marginLeft: 236,    
   },
   areaTarefas: {
     width: '90%',   
@@ -25,6 +25,19 @@ export const styles = StyleSheet.create({
     fontFamily: theme.fonts.title,
     fontSize: 25,
     marginBottom: 20,
+  },
+  bgswipe: {
+    width: '50%',
+    height: 45,
+    alignSelf: 'flex-end',
+    alignItems: 'flex-end',
+    marginTop: 13,
+    borderRadius: 8,
+    backgroundColor: theme.colors.danger,
+  },
+  iconswipe: {
+    marginVertical: 10,
+    marginHorizontal: 16,
   }
 
 });

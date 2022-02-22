@@ -24,6 +24,6 @@ export function Routes() {
 
     //Provisorio:
     return(
-        <AppRoutes/>
+      <AppRoutes/>
     )
 }
