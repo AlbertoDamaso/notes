@@ -3,7 +3,7 @@ import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import { SignIn } from '../screens/SignIn';
-import { Modal } from '../screens/Modal';
+import { ModalView } from '../screens/ModalView';
 
 const AuthStack = createNativeStackNavigator();
 
@@ -17,7 +17,7 @@ export function AuthRoutes() {
       />   
       <AuthStack.Screen
         name='Modal'
-        component={Modal}
+        component={ModalView}
         options={{headerShown: false}}
       />      
     </AuthStack.Navigator> 

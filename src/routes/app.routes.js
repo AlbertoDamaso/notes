@@ -5,7 +5,7 @@ import { Ionicons, Feather, AntDesign } from '@expo/vector-icons';
 
 import { Home } from '../screens/Home';
 import { Profile } from '../screens/Profile';
-import { Modal } from '../screens/Modal';
+import { ModalView } from '../screens/ModalView';
 import { CustomDrawer } from '../components/CustomDrawer';
 import { theme } from '../global/styles/theme';
 
@@ -55,7 +55,7 @@ export function AppRoutes() {
 
       <AppDrawer.Screen 
         name="Modal" 
-        component={Modal}
+        component={ModalView}
         options={{
           drawerIcon: ({color, size}) => (
             <Feather
