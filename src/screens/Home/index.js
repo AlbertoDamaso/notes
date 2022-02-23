@@ -3,7 +3,6 @@ import { useNavigation } from '@react-navigation/native';
 import {
   View, 
   Text,
-  FlatList,
   TouchableWithoutFeedback as TWF,
   TouchableOpacity,
 } from 'react-native';

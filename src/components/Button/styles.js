@@ -3,7 +3,7 @@ import { theme } from '../../global/styles/theme';
 
 export const styles = StyleSheet.create({
   submitButton: {
-    width: '60%',
+    width: '80%',
     height: 45,
     alignItems: 'center',
     justifyContent: 'center',
@@ -15,5 +15,6 @@ export const styles = StyleSheet.create({
     fontSize: 20,
     fontFamily: theme.fonts.title,
     color: theme.colors.light,
+    paddingHorizontal: 15,
   }
 });

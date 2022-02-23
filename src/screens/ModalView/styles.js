@@ -10,6 +10,14 @@ export const styles = StyleSheet.create({
     marginTop: 100,
     borderRadius: 6,
     backgroundColor: theme.colors.lightMais1,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.5,
+    shadowRadius: 4,
+    elevation: 5
   },
   contentTitle: {
     flexDirection: 'row',

@@ -8,15 +8,14 @@ import {
   TextInput
 } from 'react-native';
 
-
-import { Background } from '../../components/Background';
+import { InputDate } from '../../components/InputDate';
 import { Button } from '../../components/Button';
 import { styles } from './styles';
 
 export function ModalView() {
   return (
     <Modal 
-      transparent
+      transparent={true}
       animationType="slide"
       statusBarTranslucent
       visible={true}
@@ -56,10 +55,17 @@ export function ModalView() {
 
           <View style={styles.areaInput}>
             <Text style={styles.title}>Data de entrega</Text>
-            <TextInput 
-              placeholder='Selecione uma data'
-              placeholderTextColor="#B7B7B7"
-              style={styles.inputData}                 
+            <InputDate
+              // date={dateN}
+              display="default"
+              mode="date"
+              placeholder="Selecione uma data"
+              format="DD/MM/YYYY"
+              minDate="01-01-1922"
+              maxDate="01-01-2050"
+              confirmBtnText="Confirm"
+              cancelBtnText="Cancel"
+              // onDateChange={(date) => setDateN(date)}
             />
             
           </View>
