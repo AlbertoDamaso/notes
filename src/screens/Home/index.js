@@ -19,15 +19,16 @@ import { styles } from './styles';
 
 
 
-function handleDelete(){
-
-}
-
-function handleNewTask(){
-  navigation.navigate('Modal')
-}
 
 export function Home() {
+  function handleDelete(){
+  
+  }
+  
+  function handleNewTask(){
+    navigation.navigate('Modal')
+  }
+  
   const [tarefas, setTarefas] = useState([
     {key: '1', assunto: "Aprenda Fluxo UI", tempo: 2},
     {key: '2', assunto: "Se increver no valdo sujei...", tempo: 3},

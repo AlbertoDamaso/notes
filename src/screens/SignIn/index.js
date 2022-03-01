@@ -1,17 +1,26 @@
-import React from 'react';
-import {
-  View,
-  Text
-} from 'react-native';
+import React, { useState, useContext } from 'react';
 
 import google from '../../assets/GoogleImg.png'
 
+import { AuthContext } from '../../contexts/auth';
 import { Background } from '../../components/Background';
 import { BtnGoogle } from '../../components/BtnGoogle';
 import { Logo } from '../../components/Logo';
-import { styles } from './styles';
 
 export function SignIn() {
+  const result = useState('');
+  const { signIn, loadingAuth } = useContext(AuthContext);
+
+  function handleGoogle(){
+    signIn(result);
+
+    if(result){
+      console.log('funfou')
+    }else{
+      alert('Error');
+    }
+  }
+
   return (
     <Background>
         <Logo/>
@@ -20,6 +29,7 @@ export function SignIn() {
           source={google}
           title={"ENTRAR"}
           activeOpacity={0.7}
+          onPress={handleGoogle}
         />
     </Background>
   );
