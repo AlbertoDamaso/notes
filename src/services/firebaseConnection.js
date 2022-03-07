@@ -2,7 +2,7 @@ import firebase from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/database';
 
-let firebaseConfig = {
+const firebaseConfig = {
     apiKey: "AIzaSyD7yGYg481bKrnnMxpObJ6Vg62PA_E6dJA",
     authDomain: "notes-ad059.firebaseapp.com",
     databaseURL: "https://notes-ad059-default-rtdb.firebaseio.com",
@@ -13,9 +13,7 @@ let firebaseConfig = {
     measurementId: "G-M8S1M9EZ50"
 };
 
-if(!firebase.apps.length){
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
-}
+const app = firebase.initializeApp(firebaseConfig);
+const auth = firebase.auth();
 
-export default firebase;
+export { firebase, auth, app } ;

@@ -1,5 +1,5 @@
 import React, { useState, createContext, useEffect } from 'react';
-import firebase from '../services/firebaseConnection';
+// import firebase from '../services/firebaseConnection';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export const AuthContext = createContext({})
@@ -23,12 +23,47 @@ function AuthProvider({ children }){
     }, [])
 
     //Funcao para logar o usuario
-    async function signIn(){
-        const provider = new firebase.auth.GoogleAuthProvider();
-        let result = await firebase.auth().signInWithPopup(provider);
-        return result;
+    // async function signIn(){
+    //     setLoading(true)
+    //     await new firebase.auth().GoogleAuthProvider()
+    //     await firebase.auth().signInWithPopup()
+    //     .then(async (value) =>{
+    //         alert('Usuario criado: ' + value.user.email);
+    //         let uid = value.user.uid;
+    //         await firebase.database().ref('users').child(uid).set({                
+    //             nome: value.user.displayName,
+    //             ntarefa: task,
+    //             desc: desc,
+    //             dtentrega: dateIn
+    //         })
+    //         .then(()=>{
+    //             let data = {
+    //                 uid: uid,
+    //                 nome: value.user.displayName,
+    //                 email: value.user.email,
+    //             };
+    //             setUser(data);
+    //             storageUser(data);
+    //             setLoadingAuth(false);
+    //         })
+    //     })
+    //     .catch((error) => {
+    //         alert(error.code);
+    //         setLoadingAuth(false);
+    //     })
+    // }
+
+    async function storageUser(data) {
+        await AsyncStorage.setItem('Auth_user', JSON.stringify(data))        
     }
     
+    async function signOut(){
+        await firebase.auth().signOut();
+        await AsyncStorage.clear()
+            .then( ()=> {
+                setUser(null);
+            })
+    }
     return(
         <AuthContext.Provider value={{ signed: !!user, user, loading, loadingAuth, signIn, signOut }}>
             {children}
