@@ -9,6 +9,7 @@ import { Montserrat_400Regular, Montserrat_700Bold } from '@expo-google-fonts/mo
 
 import { Background } from './src/components/Background';
 import { Routes } from './src/routes';
+import AuthProvider from './src/contexts/auth';
 
 // console.disableYellowBox=true;
 
@@ -24,12 +25,14 @@ export default function App() {
 
   return (
     <NavigationContainer>
-      <StatusBar
-        barStyle="light-content"
-        backgroundColor="transparent"
-        translucent
-      />
-      <Routes/>
+      <AuthProvider>
+        <StatusBar
+          barStyle="light-content"
+          backgroundColor="transparent"
+          translucent
+        />
+        <Routes/>
+      </AuthProvider>
     </NavigationContainer>
   );
 }

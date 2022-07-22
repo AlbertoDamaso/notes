@@ -9,11 +9,10 @@ import { BtnGoogle } from '../../components/BtnGoogle';
 import { Logo } from '../../components/Logo';
 
 export function SignIn() {
-  const handleGoogle = async () => {
-    const provider = new firebase.auth.GoogleAuthProvider();
+  const { signIn } = useContext(AuthContext);
 
-    const result = await auth.signInWithPopup(provider);
-    console.log(result)
+  function handleGoogle(){
+    signIn();
   }
   
 
