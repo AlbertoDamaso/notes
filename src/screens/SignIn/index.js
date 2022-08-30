@@ -1,6 +1,5 @@
-import React, { useState, useContext } from 'react';
+import React, { useContext } from 'react';
 
-import { firebase, auth } from '../../services/firebaseConnection';
 import google from '../../assets/GoogleImg.png'
 
 import { AuthContext } from '../../contexts/auth';

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigation } from '@react-navigation/native';
 import {
   View, 
@@ -9,7 +9,6 @@ import {
 
 import { Feather } from '@expo/vector-icons';
 import { SwipeListView } from 'react-native-swipe-list-view';
-
 import { Background } from '../../components/Background';
 import { ImgProfile } from '../../components/ImgProfile';
 import { BtnAdd } from '../../components/BtnAdd';
@@ -20,7 +19,13 @@ import { styles } from './styles';
 
 
 
-export function Home() {
+export function Home({ route }) {
+  const navigation = useNavigation();
+  const [profile, setProfile] = useState();
+
+  const { token } = route.params;
+  console.log(token);
+
   function handleDelete(){
   
   }
@@ -35,7 +40,17 @@ export function Home() {
     {key: '3', assunto: "Treinar inteface no figma", tempo: 6},
   ]);
 
-  const navigation = useNavigation();
+  async function loadProfile(){
+    const response = await axios.get(`https://www.googleapis.com/oauth2/v2/userinfo?alt=json&access_token=${token}`)
+    //const userInfo = await response.json();
+
+    console.log("####DADOS DO USER####")
+    console.log(response);
+  }
+
+  useEffect(() => {
+    loadProfile();
+  }, [])
 
   return (
     <Background>

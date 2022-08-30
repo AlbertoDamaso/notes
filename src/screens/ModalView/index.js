@@ -20,7 +20,7 @@ export function ModalView() {
       statusBarTranslucent
       visible={true}
     >
-      <TWF onPress={ () => closeModal()}>
+      <TWF onPress={ () => closedModal()}>
         <View style={styles.overlay}>
           <View style={styles.contentTitle}>
             <Feather
